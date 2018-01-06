@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str, и если она превосходит maxlength – заменяет конец str на "...", так чтобы ее длина стала равна maxlength.
+        // Результатом функции должна быть (при необходимости) усечённая строка.
+        function truncate(str, maxlength) {
+            if (str.length > maxlength) {
+                console.log (str.slice(0, maxlength-3) + '...');
+            }  else {
+                console.log (str);                
+            }
+        }
+        truncate ('1234567890', 10);
+        truncate ('Новая строка! Самая новая!!!', 30);
+
+        // Есть стоимость в виде строки: "$120". То есть, первым идёт знак валюты, а затем – число.
+        // Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять число-значение, в данном случае 120.
+
+        function extractCurrencyValue(str) {
+            console.log(+str.slice(1));
+        }
+        extractCurrencyValue ("$120");
+    </script>
+</body>
+</html>
