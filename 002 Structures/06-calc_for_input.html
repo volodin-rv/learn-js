@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=0;
+        var mas = [];
+        var summ = 0;
+
+        do {
+            a = prompt('Введите число');
+            if (isNumeric(a)) {
+                mas.push(a);
+            } else if (a === null) {
+                alert('Ввод закончен');
+            } else {
+                alert('Ввели не число!');
+            }
+        } while (a !== null);
+
+        for (var i=0; i<mas.length; i++) {
+            summ += +mas[i];
+        }
+
+        function isNumeric(n) { //проверка на число
+            return !isNaN(parseFloat(n)) && isFinite(n)
+        }
+        console.log(mas);
+        console.log(summ);
+    </script>
+</body>
+</html>
