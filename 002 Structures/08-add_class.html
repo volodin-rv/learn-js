@@ -27,11 +27,29 @@
     obj.className = classes.join(' ');
   }
 
+//Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть:
+  function removeClass(obj, cls) {
+    var classes = obj.className.split(' ');
+    var newarr = [];
+    for (var i = 0; i < classes.length; i++) {
+      if (classes[i] === cls) classes[i] = '';
+    }
+    for (var y = 0; y < classes.length; y++) {
+      if (classes[y] !== '') {
+        newarr.push(classes[y]);
+      }
+    }
+    obj.className = newarr.join(' ');
+    console.log(obj);
+  }
+
 addClass(obj, 'new'); // obj.className='open menu new'
 addClass(obj, 'open'); // без изменений (класс уже существует)
 addClass(obj, 'me'); // obj.className='open menu new me'
+removeClass(obj, 'open'); // obj.className='menu new me'
+removeClass(obj, 'we'); // obj.className='menu new me'
 
-alert( obj.className ); // "open menu new me"
+alert( obj.className ); // "menu new me"
 </script>
 </body>
 </html>
