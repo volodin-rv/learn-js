@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function arguments() {
+    console.log(arguments.length); //выведет количество аргументов
+  }
+  arguments(5, 2, '112');
+
+//  Как в функции отличить отсутствующий аргумент от undefined?
+// ..ваш код..
+// выведите 1, если первый аргумент есть, и 0 - если нет
+    function f(x) {
+      if (arguments.length > 0) {
+        console.log('1');
+      } else {
+        console.log('0');
+      }
+    }
+  f(undefined); // 1
+  f(); // 0
+
+//  Напишите функцию sum(...), которая возвращает сумму всех своих аргументов:
+  function sum() {
+    var s = 0;
+    for (var i=0; i < arguments.length; i++) {
+      s = s + arguments[i];
+    }
+    console.log(s);
+  }
+  sum();
+  sum(1);
+  sum(1, 2);
+  sum(1, 2, 3);
+  sum(1, 2, 3, 4);
+</script>
+</body>
+</html>
