@@ -8,9 +8,49 @@
 </head>
 <body>
     <script>
-        var d = new Date();
+//  Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут.
+//  Временная зона – местная. Выведите его на экран.
+    var d = new Date(2012, 1, 20, 3, 12);
+    console.log(d);
 
-        console.log(d);
+
+//  Создайте функцию getWeekDay(date), которая выводит текущий день недели в коротком формате „пн“, „вт“, … „вс“.
+//  Например:
+    var date = new Date();
+
+    function getWeekDay(d) {
+      var weekDay = d.getDay();
+      var weekDays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+      console.log(weekDays[weekDay]);
+    }
+    getWeekDay(date);
+
+
+//  Напишите функцию, getLocalDay(date) которая возвращает день недели для даты date.
+//  День нужно возвратить в европейской нумерации, т.е. понедельник имеет номер 1, вторник номер 2, …, воскресенье – номер 7.
+    function getLocalDay(d) {
+      var weekDay = d.getDay() - 1;
+      var weekDays = ['1-Пн', '2-Вт', '3-Ср', '4-Чт', '5-Пт', '6-Сб', '7-Вс'];
+      console.log(weekDays[weekDay]);
+    }
+    getLocalDay(date);
+
+
+//  Создайте функцию getDateAgo(date, days), которая возвращает число, которое было days дней назад от даты date.
+//  var date = new Date(2015, 0, 2);
+//  alert( getDateAgo(date, 1) ); // 1, (1 января 2015)
+//  alert( getDateAgo(date, 2) ); // 31, (31 декабря 2014)
+//  alert( getDateAgo(date, 365) ); // 2, (2 января 2014)
+//  P.S. Важная деталь: в процессе вычислений функция не должна менять переданный ей объект date.
+    function getDateAgo(date, days) {
+      var oldDate = date;
+      oldDate.setDate(date.getDate()-days);
+      console.log(oldDate);
+      return oldDate;
+    }
+    getDateAgo(date, 5);
+
+
     </script>
 </body>
 </html>
