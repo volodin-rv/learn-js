@@ -17,7 +17,6 @@
 //  Создайте функцию getWeekDay(date), которая выводит текущий день недели в коротком формате „пн“, „вт“, … „вс“.
 //  Например:
     var date = new Date();
-
     function getWeekDay(d) {
       var weekDay = d.getDay();
       var weekDays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
@@ -51,6 +50,43 @@
     getDateAgo(date, 5);
 
 
+//  Напишите функцию getLastDayOfMonth(year, month), которая возвращает последний день месяца.
+//  Параметры:
+//  year – 4-значный год, например 2012.
+//  month – месяц от 0 до 11.
+//  Например, getLastDayOfMonth(2012, 1) = 29 (високосный год, февраль).
+    function getLastDayOfMonth(year, month) {
+      var date = new Date(year,  month+1, 0);
+      var monthDays = date.getDate();
+      console.log(monthDays);
+      return monthDays;
+    }
+    getLastDayOfMonth (2017, 1);
+
+
+//  Напишите функцию getSecondsToday() которая возвращает, сколько секунд прошло с начала сегодняшнего дня.
+//  Например, если сейчас 10:00 и не было перехода на зимнее/летнее время, то:
+//  getSecondsToday() == 36000 // (3600 * 10)
+//  Функция должна работать в любой день, т.е. в ней не должно быть конкретного значения сегодняшней даты.
+    function getSecondsToday() {
+      var today = new Date();
+      var startDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      console.log( Math.round((today - startDay)/1000));
+    }
+    getSecondsToday();
+
+
+//  Напишите функцию getSecondsToTomorrow() которая возвращает, сколько секунд осталось до завтра.
+//  Например, если сейчас 23:00, то:
+//  getSecondsToTomorrow() == 3600
+//  P.S. Функция должна работать в любой день, т.е. в ней не должно быть конкретного значения сегодняшней даты.
+    var today = new Date();
+    function getSecondsToTomorrow(date) {
+      var today = new Date();
+      var tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate()+1);
+      console.log( Math.round((tomorrow - date)/1000) );
+    }
+    getSecondsToTomorrow(today);
     </script>
 </body>
 </html>
