@@ -87,6 +87,24 @@
       console.log( Math.round((tomorrow - date)/1000) );
     }
     getSecondsToTomorrow(today);
+
+
+//  Напишите функцию formatDate(date), которая выводит дату date в формате дд.мм.гг:
+//  Например:
+//  var d = new Date(2014, 0, 30); // 30 января 2014
+//  alert( formatDate(d) ); // '30.01.14'
+//  P.S. Обратите внимание, ведущие нули должны присутствовать, то есть 1 января 2001 должно быть 01.01.01, а не 1.1.1.
+    function formatDate(date) {
+      var day = date.getDate();
+      var mounth = date.getMonth() + 1;
+      var year = +date.getFullYear().toString().slice(2);
+
+      if (day < 10) day = '0' + day;
+      if (mounth < 10) mounth = '0' + mounth;
+
+      return day + '.' + mounth + '.' + year
+    }
+    console.log(formatDate(today));
     </script>
 </body>
 </html>
