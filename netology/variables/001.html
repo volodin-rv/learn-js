@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    var name, price, quantity = 2, sale = 0.9, sum;
+    var money = 52334224, specPrice = 6500;
+    
+    name = 'Телепорт бытовой VZHIH-101';
+    price = 10000;
+
+    console.log('В наличии имеется: ' + name);
+    console.log('Стоимость товара ' + price + ' Q');
+
+    sum = quantity * price * sale;
+    console.log('Цена покупки составит ' + sum + ' Q');
+
+    var maxQuantity = Math.floor(money/specPrice);
+    var balance = money - maxQuantity*specPrice;
+
+    console.log('Мы можем закупить ' + maxQuantity + ' единиц товара, после закупки на счету останется ' + balance + ' Q');
+
+</script>
+
+</body>
+</html>
